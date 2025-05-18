@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.memoria-games {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 10px;
+}
+
+.carta {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+}
+
+.carta input {
+  display: none;
+}
+
+.carta label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+  border-radius: 8px;
+}
+
+.frente, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.frente {
+  background-color: #333;
+  transform: rotateY(0deg);
+}
+
+.back {
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(180deg);
+}
+
+input:checked ~ .frente {
+  transform: rotateY(180deg);
+}
+
+input:checked ~ .back {
+  transform: rotateY(0deg);
+}
+
+
+.img1 { background-image: url('https://tse4.mm.bing.net/th?id=OIP.GObklW-KSVYizwx6Xt-2HgHaEK&pid=Api&P=0&h=180'); }
+.img2 { background-image: url('https://c.wallhere.com/photos/cf/67/Kimi_no_Na_Wa_anime_girls-1946513.jpg!d'); }
+.img3 { background-image: url('https://tse1.mm.bing.net/th?id=OIP.76Ox59sarM-w5q30vTDPPwHaEo&pid=Api&P=0&h=180'); }
+.img4 { background-image: url('https://i.pinimg.com/originals/29/1a/00/291a00a86857171277f9af0775d06502.jpg'); }
